@@ -95,10 +95,17 @@
         }
 
 
-        iframe {
+        .video-box {
+            position: absolute;
             pointer-events: none;
             width: 100%;
             height: calc(100vw / 1.77777778);
+        }
+        .video-box.vertical{
+            left: 50%;
+            margin-left: calc(100vh * 1.77777778 / 2 * -1);
+            width: calc(100vh * 1.77777778);
+            height: calc(100vh - 100px);
         }
 
         .page {
@@ -161,7 +168,7 @@
                 </div>
                 <!--WISTIA player container start-->
                 <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-                    <div class="wistia_responsive_wrapper"
+                    <div class="wistia_responsive_wrapper video-box"
                          style="height:100%;left:0;position:absolute;top:0;width:100%;">
                         <div class="wistia_embed wistia_async_7549lonrs9 videoFoam=true"
                              style="height:100%;position:relative;width:100%">
@@ -221,7 +228,7 @@
                     <h2>Youtube Header Title</h2>
                 </div>
                 <!--Youtube player container start-->
-                <div id="ytplayer-js" name="frame"></div>
+                <div id="ytplayer-js" name="frame" class="video-box"></div>
                 <!--Youtube player container end-->
             </div>
             <div class="page-content">
@@ -323,6 +330,25 @@
 <!--Youtube script end-->
 
 <script>
+  function onResizeVideoBox(width, height){
+    var videoBox = document.getElementsByClassName('video-box')
+
+    if (height > width / 1.7){
+      videoBox[0].classList.add('vertical')
+      videoBox[1].classList.add('vertical')
+    } else {
+      videoBox[1].classList.remove('vertical')
+      videoBox[0].classList.remove('vertical')
+    }
+  }
+  let h = window.innerHeight;
+  let w = window.innerWidth;
+  onResizeVideoBox(w, h);
+  window.onresize = ()=>{
+    var h = window.innerHeight;
+    var w = window.innerWidth;
+    onResizeVideoBox(w, h);
+  }
   var elemYoutube = document.getElementById('youtube-link');
   var pageYoutube = document.getElementById('youtube');
   var elemWistia = document.getElementById('wistia-link');
