@@ -2,32 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test video background</title>
+    <title>Title</title>
     <style>
-        #page-wrapper {
-            display: flex;
-            align-items: center;
+        html, body {
+            font-size: 16px;
+
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            font-size: 1.2rem;
+            margin: .3rem 1rem;
+
+        }
+
+        .nav-menu li.active {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .nav-menu li:hover {
+            background-color: crimson;
+            color: aliceblue;
+        }
+
+        .nav-menu li {
+            cursor: pointer;
+            display: inline-block;
+            padding: .4rem .5rem;
+            border: 2px #000000 solid;
+        }
+
+        #page-wrapper {
+            /*display: flex;*/
+            /*align-items: center;*/
+        }
+
+        .page-content {
+            width: 80%;
+            margin: 0 auto;
+            text-align: justify;
+
+        }
+
         .video-wrapper {
             position: relative;
-            width: 50%;
+            width: 100vw;
+            height: auto;
         }
+
         .screen-des {
-            background-color: rgba(255, 255, 255, .6);
+            background-color: rgba(255, 255, 255, .5);
             align-items: center;
             display: inline-flex;
-            width: 640px;
-            height: 360px;
+            width: 100vw;
+            height: 100%;
             position: absolute;
             z-index: 9
         }
+
         h1 {
             display: block;
             width: 100%;
             text-align: center;
+            border: 2px #000 solid;
+            margin-bottom: .3rem;
         }
-        iframe{
+
+        h2 {
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+
+        iframe {
             pointer-events: none;
+            width: 100vw;
+            height: calc(100vw / 1.77777778);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
         }
     </style>
 </head>
@@ -59,35 +125,126 @@
 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 
 <!--Wistia script end-->
+<div class="container">
+    <nav class="nav">
+        <ul class="nav-menu">
+            <li id="youtube-link" class="menu-item active">Youtube</li>
+            <li id="wistia-link" class="menu-item">Wistia</li>
+        </ul>
+
+    </nav>
+
+</div>
 
 <div id="page-wrapper">
-    <div id="wistia-wrapper" class="video-wrapper">
-        <div class="screen-des">
-            <h1>WISTIA</h1>
-        </div>
-        <!--WISTIA player container start-->
-        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-            <div class="wistia_responsive_wrapper" style="height:360px;left:0;position:absolute;top:0;width:640px;">
-                <div class="wistia_embed wistia_async_7549lonrs9 videoFoam=true"
-                     style="height:100%;position:relative;width:100%">
-                    <div class="wistia_swatch"
-                         style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                        <img src="https://fast.wistia.com/embed/medias/7549lonrs9/swatch"
-                             style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt=""
-                             aria-hidden="true"
-                             onload="this.parentNode.style.opacity=1;"/></div>
+    <div id="wistia" class="wistia-page page">
+        <h1>Wistia Page</h1>
+        <div id="wistia-wrapper-header" class="video-wrapper">
+            <div class="screen-des">
+                <h2>Wistia Header Title</h2>
+            </div>
+            <!--WISTIA player container start-->
+            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                    <div class="wistia_embed wistia_async_7549lonrs9 videoFoam=true"
+                         style="height:100%;position:relative;width:100%">
+                        <div class="wistia_swatch"
+                             style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                            <img src="https://fast.wistia.com/embed/medias/7549lonrs9/swatch"
+                                 style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt=""
+                                 aria-hidden="true"
+                                 onload="this.parentNode.style.opacity=1;"/></div>
+                    </div>
                 </div>
             </div>
+            <!--WISTIA player container end-->
         </div>
-        <!--WISTIA player container end-->
+        <div class="page-content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt eaque ex facilis ipsam iste
+                iusto
+                labore laborum, natus nesciunt officia, omnis quae reprehenderit! Ab accusantium commodi cum delectus
+                eveniet ex, ipsum itaque iure nobis nulla obcaecati praesentium provident quisquam sed vel? At
+                consectetur
+                culpa, eaque, est impedit iusto neque obcaecati officia optio, porro reiciendis soluta unde ut. Ab
+                adipisci
+                animi aperiam architecto aut cupiditate deleniti dolore ea eaque eligendi ex facere fuga illo inventore
+                itaque laborum libero, nesciunt pariatur porro quasi quo ratione repellendus sit soluta sunt suscipit
+                vero
+                voluptas! Error harum impedit ipsum iusto laborum officia sequi suscipit! Ab at beatae, consequuntur cum
+                doloremque dolores eveniet excepturi, incidunt laboriosam magni, maxime natus odit quam rem voluptatem?
+                Error, quo, voluptatibus? Adipisci aliquid amet deserunt doloribus earum eos esse eum explicabo fuga
+                fugit
+                illo illum in ipsa, libero nam praesentium quas quisquam, repudiandae rerum saepe veritatis voluptas
+                voluptate? At aut eligendi enim eos itaque laborum magnam minus modi, natus, obcaecati omnis pariatur
+                reiciendis sit tempora totam vel vitae! Architecto blanditiis consequatur dolore doloremque dolores
+                eius,
+                error, excepturi illo incidunt iure modi molestias natus neque nobis nostrum officia placeat,
+                repellendus
+                tempora vero vitae! Aut dolor eos laborum mollitia odio repellat, ullam voluptatem. Accusamus aliquam
+                beatae, id iusto neque nobis nostrum officia quam rem. Aspernatur cumque, itaque mollitia placeat rem
+                ullam
+                veritatis? Assumenda blanditiis doloremque dolorum ipsam labore nisi perspiciatis quibusdam tempore.
+            </p>
+        </div>
+
     </div>
-    <div id="youtube-wrapper" class="video-wrapper">
-        <div class="screen-des">
-            <h1>Youtube</h1>
+    <div id="youtube" class="youtube-page page active">
+        <h1>Youtube Page</h1>
+        <div id="youtube-wrapper-header" class="video-wrapper">
+            <div class="screen-des">
+                <h2>Youtube Header Title</h2>
+            </div>
+            <!--Youtube player container start-->
+            <div id="ytplayer-js"></div>
+            <!--Youtube player container end-->
         </div>
-        <!--Youtube player container start-->
-        <div id="ytplayer-js"></div>
-        <!--Youtube player container end-->
+        <div class="page-content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ea illum inventore
+                ipsum nisi pariatur quae sequi similique, totam? Cumque et fugiat illum minima mollitia nisi officia
+                perspiciatis quos rerum tempore! Accusantium adipisci animi asperiores at blanditiis consectetur
+                corporis
+                cum debitis dignissimos ducimus, enim facilis id illo ipsa ipsam iure maxime nisi, possimus rem sit
+                tenetur,
+                veniam vero voluptatibus! Aspernatur at aut consectetur debitis dicta dolorem enim esse ex facilis,
+                illum
+                inventore, ipsam iusto maxime minima modi molestiae molestias perspiciatis quae quaerat, quidem ratione
+                repellat repellendus rerum suscipit veniam voluptatem voluptatibus. Aliquid asperiores aspernatur dolore
+                eaque eligendi est ex, harum illo iusto, modi nostrum omnis perspiciatis quisquam saepe sed sequi
+                veritatis
+                voluptate? Ab adipisci animi assumenda dolore excepturi explicabo fugit hic minus mollitia nihil numquam
+                odio omnis praesentium rerum sapiente similique, sit? Ab asperiores assumenda autem, commodi cumque
+                doloremque eaque eum explicabo itaque laboriosam, magni mollitia necessitatibus nemo perspiciatis quas
+                quos
+                sequi sit unde. Ab debitis dolores, illo ipsam minima minus nulla soluta! Aperiam eaque error nihil
+                obcaecati porro rem tenetur. Aliquid atque blanditiis consequuntur corporis deserunt dolores, eum
+                facilis
+                fuga iure maiores, quod sapiente soluta veniam. A at dolore, eaque eos eum eveniet hic inventore iure
+                nesciunt placeat provident, quod quos suscipit tempora totam veniam voluptates. Distinctio esse est id
+                illum, laborum nesciunt, nisi odio quibusdam quos repudiandae totam, ut. Ab animi aperiam deleniti
+                deserunt,
+                est eveniet ex exercitationem fuga fugit hic molestias nemo nulla numquam provident quas sit tempora
+                tempore, tenetur! Animi blanditiis culpa fugiat repudiandae, tenetur vel. Cupiditate dolores rem
+                sapiente?
+                Accusamus atque consequuntur cum dolores error exercitationem facilis id provident quis quo quod sed,
+                sunt
+                suscipit tempora veniam? Accusamus aliquid blanditiis consequatur deleniti dicta ea earum eligendi eos,
+                eveniet excepturi expedita fuga illum, impedit, in laboriosam magnam maiores minima modi molestias nam
+                natus
+                numquam odit omnis optio perspiciatis placeat quae quasi quibusdam quidem quod quos rem repellendus
+                tempora
+                vero voluptatem voluptates voluptatibus. A architecto dicta doloremque doloribus, dolorum ipsum odio
+                reprehenderit voluptatem? In officiis, sequi! Eligendi, eveniet hic magni nam nisi nostrum nulla numquam
+                repellat repudiandae sequi sint voluptate? A aliquam consequatur debitis dicta dolore enim et ipsum
+                iusto
+                maiores nemo numquam, provident qui quis rerum, saepe sint voluptatibus voluptatum! Blanditiis explicabo
+                maxime natus porro possimus quam, quasi quos recusandae similique velit. Aliquam asperiores assumenda
+                cum
+                cupiditate, dolor dolore, enim libero magnam nihil odit quibusdam quo, saepe sed soluta tempore vero
+                voluptatibus? Alias cumque earum laudantium?
+            </p>
+        </div>
     </div>
 </div>
 <!--Youtube script start-->
@@ -102,7 +259,7 @@
   // YouTube player after the API code downloads.
   var player;
 
-  function onYouTubePlayerAPIReady() {
+  function onYouTubePlayerAPIReady () {
     player = new YT.Player('ytplayer-js', {
       height: '360',
       width: '640',
@@ -110,9 +267,9 @@
       playerVars: {
         'playlist': 'M7lc1UVf-VE',
         'autoplay': 1,
-        'controls': 0,
-        'loop': 1,
         'mute': 1,
+        'loop': 1,
+        'controls': 0,
         'rel': 0,
         'fs': 0,
         'showinfo': 0,
@@ -125,6 +282,26 @@
   }
 </script>
 <!--Youtube script end-->
+
+<script>
+  var elemYoutube = document.getElementById('youtube-link');
+  var pageYoutube = document.getElementById('youtube');
+  var elemWistia = document.getElementById('wistia-link');
+  var pageWistia = document.getElementById('wistia');
+  elemYoutube.onclick = function () {
+    elemYoutube.classList.add("active");
+    elemWistia.classList.remove("active");
+    pageYoutube.classList.add('active');
+    pageWistia.classList.remove('active');
+  }
+  elemWistia.onclick = function () {
+    elemYoutube.classList.remove("active");
+    elemWistia.classList.add("active");
+    pageYoutube.classList.remove('active');
+    pageWistia.classList.add('active');
+  }
+
+</script>
 
 </body>
 </html>
