@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test video background</title>
+    <style>
+        #page-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .video-wrapper {
+            position: relative;
+            width: 50%;
+        }
+        .screen-des {
+            background-color: rgba(255, 255, 255, .6);
+            align-items: center;
+            display: inline-flex;
+            width: 640px;
+            height: 360px;
+            position: absolute;
+            z-index: 9
+        }
+        h1 {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        iframe{
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+<!--Wistia script start-->
+<script>
+  window._wq = window._wq || [];
+  _wq.push({
+    id: "7549lonrs9",
+    options: {
+      autoPlay: true,
+      muted: true,
+      playlistLoop: true,
+      endVideoBehavior: 'loop',
+      playbar: false,
+      playbackRateControl: false,
+      branding: false,
+      playButton: false,
+      smallPlayButton: false,
+      volumeControl: false,
+      qualityControl: false,
+      fullscreenButton: false,
+      controlsVisibleOnLoad: false,
+    },
+  });
+</script>
+
+<script src="https://fast.wistia.com/embed/medias/7549lonrs9.jsonp" async></script>
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+
+<!--Wistia script end-->
+
+<div id="page-wrapper">
+    <div id="wistia-wrapper" class="video-wrapper">
+        <div class="screen-des">
+            <h1>WISTIA</h1>
+        </div>
+        <!--WISTIA player container start-->
+        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+            <div class="wistia_responsive_wrapper" style="height:360px;left:0;position:absolute;top:0;width:640px;">
+                <div class="wistia_embed wistia_async_7549lonrs9 videoFoam=true"
+                     style="height:100%;position:relative;width:100%">
+                    <div class="wistia_swatch"
+                         style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                        <img src="https://fast.wistia.com/embed/medias/7549lonrs9/swatch"
+                             style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt=""
+                             aria-hidden="true"
+                             onload="this.parentNode.style.opacity=1;"/></div>
+                </div>
+            </div>
+        </div>
+        <!--WISTIA player container end-->
+    </div>
+    <div id="youtube-wrapper" class="video-wrapper">
+        <div class="screen-des">
+            <h1>Youtube</h1>
+        </div>
+        <!--Youtube player container start-->
+        <div id="ytplayer-js"></div>
+        <!--Youtube player container end-->
+    </div>
+</div>
+<!--Youtube script start-->
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer-js', {
+      height: '360',
+      width: '640',
+      videoId: 'M7lc1UVf-VE',
+      playerVars: {
+        'playlist': 'M7lc1UVf-VE',
+        'autoplay': 1,
+        'controls': 0,
+        'loop': 1,
+        'mute': 1,
+        'rel': 0,
+        'fs': 0,
+        'showinfo': 0,
+        'cc_load_policy': 0,
+        'iv_load_policy': 3,
+        'modestbranding': 1,
+      },
+
+    });
+  }
+</script>
+<!--Youtube script end-->
+
+</body>
+</html>
