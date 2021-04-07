@@ -6,7 +6,6 @@
     <style>
         html, body {
             font-size: 16px;
-
         }
 
         * {
@@ -14,10 +13,20 @@
             padding: 0;
         }
 
+        .container {
+            overflow: hidden;
+        }
+
+        #header {
+            height: 50px;
+            min-height: 50px;
+            max-height: 50px;
+        }
+
         .nav-menu {
             display: flex;
             font-size: 1.2rem;
-            margin: .3rem 1rem;
+            margin: .3rem 0 0 1rem;
 
         }
 
@@ -44,6 +53,8 @@
         }
 
         .page-content {
+            border-top: 2px #000 solid;
+            padding: 1rem;
             width: 80%;
             margin: 0 auto;
             text-align: justify;
@@ -52,15 +63,16 @@
 
         .video-wrapper {
             position: relative;
+            overflow: hidden;
             width: 100vw;
-            height: auto;
+            height: calc(100vh - 100px);
         }
 
         .screen-des {
             background-color: rgba(255, 255, 255, .5);
             align-items: center;
             display: inline-flex;
-            width: 100vw;
+            width: 100%;
             height: 100%;
             position: absolute;
             z-index: 9
@@ -68,6 +80,7 @@
 
         h1 {
             display: block;
+            height: 50px;
             width: 100%;
             text-align: center;
             border: 2px #000 solid;
@@ -84,7 +97,7 @@
 
         iframe {
             pointer-events: none;
-            width: 100vw;
+            width: 100%;
             height: calc(100vw / 1.77777778);
         }
 
@@ -96,6 +109,7 @@
             display: block;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <!--Wistia script start-->
@@ -125,125 +139,149 @@
 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 
 <!--Wistia script end-->
+
 <div class="container">
-    <nav class="nav">
-        <ul class="nav-menu">
-            <li id="youtube-link" class="menu-item active">Youtube</li>
-            <li id="wistia-link" class="menu-item">Wistia</li>
-        </ul>
+    <div id="header">
+        <nav class="nav">
+            <ul class="nav-menu">
+                <li id="youtube-link" class="menu-item active">Youtube</li>
+                <li id="wistia-link" class="menu-item">Wistia</li>
+            </ul>
 
-    </nav>
-
-</div>
-
-<div id="page-wrapper">
-    <div id="wistia" class="wistia-page page">
-        <h1>Wistia Page</h1>
-        <div id="wistia-wrapper-header" class="video-wrapper">
-            <div class="screen-des">
-                <h2>Wistia Header Title</h2>
-            </div>
-            <!--WISTIA player container start-->
-            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-                <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                    <div class="wistia_embed wistia_async_7549lonrs9 videoFoam=true"
-                         style="height:100%;position:relative;width:100%">
-                        <div class="wistia_swatch"
-                             style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                            <img src="https://fast.wistia.com/embed/medias/7549lonrs9/swatch"
-                                 style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt=""
-                                 aria-hidden="true"
-                                 onload="this.parentNode.style.opacity=1;"/></div>
-                    </div>
-                </div>
-            </div>
-            <!--WISTIA player container end-->
-        </div>
-        <div class="page-content">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt eaque ex facilis ipsam iste
-                iusto
-                labore laborum, natus nesciunt officia, omnis quae reprehenderit! Ab accusantium commodi cum delectus
-                eveniet ex, ipsum itaque iure nobis nulla obcaecati praesentium provident quisquam sed vel? At
-                consectetur
-                culpa, eaque, est impedit iusto neque obcaecati officia optio, porro reiciendis soluta unde ut. Ab
-                adipisci
-                animi aperiam architecto aut cupiditate deleniti dolore ea eaque eligendi ex facere fuga illo inventore
-                itaque laborum libero, nesciunt pariatur porro quasi quo ratione repellendus sit soluta sunt suscipit
-                vero
-                voluptas! Error harum impedit ipsum iusto laborum officia sequi suscipit! Ab at beatae, consequuntur cum
-                doloremque dolores eveniet excepturi, incidunt laboriosam magni, maxime natus odit quam rem voluptatem?
-                Error, quo, voluptatibus? Adipisci aliquid amet deserunt doloribus earum eos esse eum explicabo fuga
-                fugit
-                illo illum in ipsa, libero nam praesentium quas quisquam, repudiandae rerum saepe veritatis voluptas
-                voluptate? At aut eligendi enim eos itaque laborum magnam minus modi, natus, obcaecati omnis pariatur
-                reiciendis sit tempora totam vel vitae! Architecto blanditiis consequatur dolore doloremque dolores
-                eius,
-                error, excepturi illo incidunt iure modi molestias natus neque nobis nostrum officia placeat,
-                repellendus
-                tempora vero vitae! Aut dolor eos laborum mollitia odio repellat, ullam voluptatem. Accusamus aliquam
-                beatae, id iusto neque nobis nostrum officia quam rem. Aspernatur cumque, itaque mollitia placeat rem
-                ullam
-                veritatis? Assumenda blanditiis doloremque dolorum ipsam labore nisi perspiciatis quibusdam tempore.
-            </p>
-        </div>
+        </nav>
 
     </div>
-    <div id="youtube" class="youtube-page page active">
-        <h1>Youtube Page</h1>
-        <div id="youtube-wrapper-header" class="video-wrapper">
-            <div class="screen-des">
-                <h2>Youtube Header Title</h2>
+
+    <div id="page-wrapper">
+        <div id="wistia" class="wistia-page page">
+            <h1>Wistia Page</h1>
+            <div id="wistia-wrapper-header" class="video-wrapper">
+                <div class="screen-des">
+                    <h2>Wistia Header Title</h2>
+                </div>
+                <!--WISTIA player container start-->
+                <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                    <div class="wistia_responsive_wrapper"
+                         style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                        <div class="wistia_embed wistia_async_7549lonrs9 videoFoam=true"
+                             style="height:100%;position:relative;width:100%">
+                            <div class="wistia_swatch"
+                                 style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                <img src="https://fast.wistia.com/embed/medias/7549lonrs9/swatch"
+                                     style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt=""
+                                     aria-hidden="true"
+                                     onload="this.parentNode.style.opacity=1;"/></div>
+                        </div>
+                    </div>
+                </div>
+                <!--WISTIA player container end-->
             </div>
-            <!--Youtube player container start-->
-            <div id="ytplayer-js"></div>
-            <!--Youtube player container end-->
+            <div class="page-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt eaque ex facilis ipsam iste
+                    iusto
+                    labore laborum, natus nesciunt officia, omnis quae reprehenderit! Ab accusantium commodi cum
+                    delectus
+                    eveniet ex, ipsum itaque iure nobis nulla obcaecati praesentium provident quisquam sed vel? At
+                    consectetur
+                    culpa, eaque, est impedit iusto neque obcaecati officia optio, porro reiciendis soluta unde ut. Ab
+                    adipisci
+                    animi aperiam architecto aut cupiditate deleniti dolore ea eaque eligendi ex facere fuga illo
+                    inventore
+                    itaque laborum libero, nesciunt pariatur porro quasi quo ratione repellendus sit soluta sunt
+                    suscipit
+                    vero
+                    voluptas! Error harum impedit ipsum iusto laborum officia sequi suscipit! Ab at beatae, consequuntur
+                    cum
+                    doloremque dolores eveniet excepturi, incidunt laboriosam magni, maxime natus odit quam rem
+                    voluptatem?
+                    Error, quo, voluptatibus? Adipisci aliquid amet deserunt doloribus earum eos esse eum explicabo fuga
+                    fugit
+                    illo illum in ipsa, libero nam praesentium quas quisquam, repudiandae rerum saepe veritatis voluptas
+                    voluptate? At aut eligendi enim eos itaque laborum magnam minus modi, natus, obcaecati omnis
+                    pariatur
+                    reiciendis sit tempora totam vel vitae! Architecto blanditiis consequatur dolore doloremque dolores
+                    eius,
+                    error, excepturi illo incidunt iure modi molestias natus neque nobis nostrum officia placeat,
+                    repellendus
+                    tempora vero vitae! Aut dolor eos laborum mollitia odio repellat, ullam voluptatem. Accusamus
+                    aliquam
+                    beatae, id iusto neque nobis nostrum officia quam rem. Aspernatur cumque, itaque mollitia placeat
+                    rem
+                    ullam
+                    veritatis? Assumenda blanditiis doloremque dolorum ipsam labore nisi perspiciatis quibusdam tempore.
+                </p>
+            </div>
+
         </div>
-        <div class="page-content">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ea illum inventore
-                ipsum nisi pariatur quae sequi similique, totam? Cumque et fugiat illum minima mollitia nisi officia
-                perspiciatis quos rerum tempore! Accusantium adipisci animi asperiores at blanditiis consectetur
-                corporis
-                cum debitis dignissimos ducimus, enim facilis id illo ipsa ipsam iure maxime nisi, possimus rem sit
-                tenetur,
-                veniam vero voluptatibus! Aspernatur at aut consectetur debitis dicta dolorem enim esse ex facilis,
-                illum
-                inventore, ipsam iusto maxime minima modi molestiae molestias perspiciatis quae quaerat, quidem ratione
-                repellat repellendus rerum suscipit veniam voluptatem voluptatibus. Aliquid asperiores aspernatur dolore
-                eaque eligendi est ex, harum illo iusto, modi nostrum omnis perspiciatis quisquam saepe sed sequi
-                veritatis
-                voluptate? Ab adipisci animi assumenda dolore excepturi explicabo fugit hic minus mollitia nihil numquam
-                odio omnis praesentium rerum sapiente similique, sit? Ab asperiores assumenda autem, commodi cumque
-                doloremque eaque eum explicabo itaque laboriosam, magni mollitia necessitatibus nemo perspiciatis quas
-                quos
-                sequi sit unde. Ab debitis dolores, illo ipsam minima minus nulla soluta! Aperiam eaque error nihil
-                obcaecati porro rem tenetur. Aliquid atque blanditiis consequuntur corporis deserunt dolores, eum
-                facilis
-                fuga iure maiores, quod sapiente soluta veniam. A at dolore, eaque eos eum eveniet hic inventore iure
-                nesciunt placeat provident, quod quos suscipit tempora totam veniam voluptates. Distinctio esse est id
-                illum, laborum nesciunt, nisi odio quibusdam quos repudiandae totam, ut. Ab animi aperiam deleniti
-                deserunt,
-                est eveniet ex exercitationem fuga fugit hic molestias nemo nulla numquam provident quas sit tempora
-                tempore, tenetur! Animi blanditiis culpa fugiat repudiandae, tenetur vel. Cupiditate dolores rem
-                sapiente?
-                Accusamus atque consequuntur cum dolores error exercitationem facilis id provident quis quo quod sed,
-                sunt
-                suscipit tempora veniam? Accusamus aliquid blanditiis consequatur deleniti dicta ea earum eligendi eos,
-                eveniet excepturi expedita fuga illum, impedit, in laboriosam magnam maiores minima modi molestias nam
-                natus
-                numquam odit omnis optio perspiciatis placeat quae quasi quibusdam quidem quod quos rem repellendus
-                tempora
-                vero voluptatem voluptates voluptatibus. A architecto dicta doloremque doloribus, dolorum ipsum odio
-                reprehenderit voluptatem? In officiis, sequi! Eligendi, eveniet hic magni nam nisi nostrum nulla numquam
-                repellat repudiandae sequi sint voluptate? A aliquam consequatur debitis dicta dolore enim et ipsum
-                iusto
-                maiores nemo numquam, provident qui quis rerum, saepe sint voluptatibus voluptatum! Blanditiis explicabo
-                maxime natus porro possimus quam, quasi quos recusandae similique velit. Aliquam asperiores assumenda
-                cum
-                cupiditate, dolor dolore, enim libero magnam nihil odit quibusdam quo, saepe sed soluta tempore vero
-                voluptatibus? Alias cumque earum laudantium?
-            </p>
+        <div id="youtube" class="youtube-page page active">
+            <h1>Youtube Page</h1>
+            <div id="youtube-wrapper-header" class="video-wrapper">
+                <div class="screen-des">
+                    <h2>Youtube Header Title</h2>
+                </div>
+                <!--Youtube player container start-->
+                <div id="ytplayer-js" name="frame"></div>
+                <!--Youtube player container end-->
+            </div>
+            <div class="page-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ea illum inventore
+                    ipsum nisi pariatur quae sequi similique, totam? Cumque et fugiat illum minima mollitia nisi officia
+                    perspiciatis quos rerum tempore! Accusantium adipisci animi asperiores at blanditiis consectetur
+                    corporis
+                    cum debitis dignissimos ducimus, enim facilis id illo ipsa ipsam iure maxime nisi, possimus rem sit
+                    tenetur,
+                    veniam vero voluptatibus! Aspernatur at aut consectetur debitis dicta dolorem enim esse ex facilis,
+                    illum
+                    inventore, ipsam iusto maxime minima modi molestiae molestias perspiciatis quae quaerat, quidem
+                    ratione
+                    repellat repellendus rerum suscipit veniam voluptatem voluptatibus. Aliquid asperiores aspernatur
+                    dolore
+                    eaque eligendi est ex, harum illo iusto, modi nostrum omnis perspiciatis quisquam saepe sed sequi
+                    veritatis
+                    voluptate? Ab adipisci animi assumenda dolore excepturi explicabo fugit hic minus mollitia nihil
+                    numquam
+                    odio omnis praesentium rerum sapiente similique, sit? Ab asperiores assumenda autem, commodi cumque
+                    doloremque eaque eum explicabo itaque laboriosam, magni mollitia necessitatibus nemo perspiciatis
+                    quas
+                    quos
+                    sequi sit unde. Ab debitis dolores, illo ipsam minima minus nulla soluta! Aperiam eaque error nihil
+                    obcaecati porro rem tenetur. Aliquid atque blanditiis consequuntur corporis deserunt dolores, eum
+                    facilis
+                    fuga iure maiores, quod sapiente soluta veniam. A at dolore, eaque eos eum eveniet hic inventore
+                    iure
+                    nesciunt placeat provident, quod quos suscipit tempora totam veniam voluptates. Distinctio esse est
+                    id
+                    illum, laborum nesciunt, nisi odio quibusdam quos repudiandae totam, ut. Ab animi aperiam deleniti
+                    deserunt,
+                    est eveniet ex exercitationem fuga fugit hic molestias nemo nulla numquam provident quas sit tempora
+                    tempore, tenetur! Animi blanditiis culpa fugiat repudiandae, tenetur vel. Cupiditate dolores rem
+                    sapiente?
+                    Accusamus atque consequuntur cum dolores error exercitationem facilis id provident quis quo quod
+                    sed,
+                    sunt
+                    suscipit tempora veniam? Accusamus aliquid blanditiis consequatur deleniti dicta ea earum eligendi
+                    eos,
+                    eveniet excepturi expedita fuga illum, impedit, in laboriosam magnam maiores minima modi molestias
+                    nam
+                    natus
+                    numquam odit omnis optio perspiciatis placeat quae quasi quibusdam quidem quod quos rem repellendus
+                    tempora
+                    vero voluptatem voluptates voluptatibus. A architecto dicta doloremque doloribus, dolorum ipsum odio
+                    reprehenderit voluptatem? In officiis, sequi! Eligendi, eveniet hic magni nam nisi nostrum nulla
+                    numquam
+                    repellat repudiandae sequi sint voluptate? A aliquam consequatur debitis dicta dolore enim et ipsum
+                    iusto
+                    maiores nemo numquam, provident qui quis rerum, saepe sint voluptatibus voluptatum! Blanditiis
+                    explicabo
+                    maxime natus porro possimus quam, quasi quos recusandae similique velit. Aliquam asperiores
+                    assumenda
+                    cum
+                    cupiditate, dolor dolore, enim libero magnam nihil odit quibusdam quo, saepe sed soluta tempore vero
+                    voluptatibus? Alias cumque earum laudantium?
+                </p>
+            </div>
         </div>
     </div>
 </div>
@@ -269,6 +307,7 @@
         'autoplay': 1,
         'mute': 1,
         'loop': 1,
+        'autohide': 1,
         'controls': 0,
         'rel': 0,
         'fs': 0,
@@ -300,6 +339,40 @@
     pageYoutube.classList.remove('active');
     pageWistia.classList.add('active');
   }
+
+</script>
+<script async>
+
+  var iframe = document.getElementById('ytplayer-js');
+  console.log('iframe 44444444444444444444444444', iframe)
+
+  var style = document.createElement('style');
+  style.textContent =
+    '.ytp-chrome-top {' +
+    '  display: none;' +
+    '}'
+  ;
+  window.onload = function() {
+    let myiFrame = document.getElementById("ytplayer-js");
+    // var frm = frames['frame'].document;
+    // let doc = myiFrame[0].document;
+    console.log('iframe 111111111111111111111111111111111111111111', myiFrame)
+
+    // doc.childNodes.innerHTML = doc.childNodes.innerHTML + '<style type="text/css">.ytp-chrome-top.ytp-show-cards-title {display: none;}</style>';
+  }
+
+  $(iframe).ready(function(){
+    style.tagName = 'custon';
+    // iframe.head.appendChild(style);
+
+    // $("#ytplayer-js").on("load", function () {
+    //   console.log('iframe 3444444444')
+    // })
+  });
+
+
+  // style.type = 'text/css';
+
 
 </script>
 
