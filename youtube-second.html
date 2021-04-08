@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>YouTube Embed Example Page</title>
+    <title>YouTube Embed with image replaced Example Page</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta http-equiv="Access-Control-Allow-Origin" content="https://www.youtube.com">
@@ -12,27 +12,27 @@
     <div id="header">
         <nav class="nav">
             <ul class="nav-menu">
-                <li id="youtube-link" class="menu-item active"><a href="index.html">Youtube</a></li>
+                <li id="youtube-link" class="menu-item"><a href="index.html">Youtube</a></li>
                 <li id="wistia-link" class="menu-item"><a href="wistia.html">Wistia</a></li>
                 <li class="spacer"></li>
-                <li id="youtube2-link" class="menu-item hidden"><a href="youtube-second.html">Youtube with image replace</a></li>
+                <li id="youtube2-link" class="menu-item active"><a href="youtube-second.html">Youtube with image replace</a></li>
 
             </ul>
         </nav>
     </div>
     <div id="page-wrapper">
         <div id="youtube" class="youtube-page page active">
-            <h1>Youtube Page</h1>
+            <h1>Youtube with image replace Page</h1>
             <div id="youtube-wrapper-header" class="video-wrapper">
                 <div class="screen-des">
                     <h2>Youtube Header Title</h2>
                 </div>
                 <!--Youtube player container start-->
-
-                <!--                <div id="ytplayer-thumbnail-wrapper ytplayer-js-wrapper">-->
-                <!--                    <img id-"thumbnail-youtube-img" class="video-box" src="https://img.youtube.com/vi/_IdwX1S_Ad4/maxresdefault.jpg" alt="">-->
-                <!--                </div>-->
-                <div id="sdf">
+                <div id="ytplayer-thumbnail-wrapper ">
+                    <img id="thumbnail-youtube-img" class="video-box"
+                         src="" alt="">
+                </div>
+                <div id="ytplayer-js-wrapper" class="hide">
                     <div id="ytplayer" name="frame" class="video-box"></div>
                 </div>
                 <!--Youtube player container end-->
@@ -100,10 +100,6 @@
 </div>
 <!--Youtube script start-->
 <script type="text/javascript" async="" src="script.js">
-
-
-
-
 
 
 </script>
